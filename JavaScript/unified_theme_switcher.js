@@ -49,6 +49,33 @@ function updateThemeIcon(theme) {
     });
 }
 
+// Функция удаления темного фона
+function removeDarkBackground() {
+    // Удаляем темный фон с body и html
+    document.body.style.backgroundColor = 'transparent';
+    document.body.style.backgroundImage = 'none';
+    document.body.style.background = 'none';
+    document.documentElement.style.backgroundColor = 'transparent';
+    document.documentElement.style.backgroundImage = 'none';
+    document.documentElement.style.background = 'none';
+    
+    // Удаляем темный фон с main-frame
+    const mainFrame = document.querySelector('.main-frame');
+    if (mainFrame) {
+        mainFrame.style.backgroundColor = 'transparent';
+        mainFrame.style.backgroundImage = 'none';
+        mainFrame.style.background = 'none';
+    }
+    
+    // Удаляем темный фон с video-background
+    const videoBackground = document.querySelector('.video-background');
+    if (videoBackground) {
+        videoBackground.style.backgroundColor = 'transparent';
+        videoBackground.style.backgroundImage = 'none';
+        videoBackground.style.background = 'none';
+    }
+}
+
 // Функция переключения темы
 function toggleTheme() {
     // Получаем текущую тему

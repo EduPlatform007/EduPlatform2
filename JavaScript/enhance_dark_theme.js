@@ -6,6 +6,50 @@
 
 // Добавляем CSS напрямую в страницу
 const forceDarkModeStyles = `
+    /* Принудительно удаляем темный фон для главной страницы */
+    [data-theme="dark"] body,
+    html[data-theme="dark"],
+    body.dark-theme,
+    html.dark-theme {
+        background-color: transparent !important;
+        background: none !important;
+    }
+    
+    [data-theme="dark"] .main-frame,
+    html[data-theme="dark"] .main-frame,
+    body[data-theme="dark"] .main-frame {
+        background-color: transparent !important;
+        background: none !important;
+    }
+    
+    [data-theme="dark"] .video-background,
+    html[data-theme="dark"] .video-background,
+    body[data-theme="dark"] .video-background {
+        background-color: transparent !important;
+        background: none !important;
+        opacity: 1 !important;
+    }
+    
+    /* Удаляем черный фон между фоновым изображением и контентом в главной секции */
+    [data-theme="dark"] .content-container,
+    html[data-theme="dark"] .content-container,
+    body[data-theme="dark"] .content-container {
+        background-color: transparent !important;
+        background-image: none !important;
+        background: none !important;
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Делаем прозрачным фон для всех элементов внутри content-container */
+    [data-theme="dark"] .content-container > *,
+    html[data-theme="dark"] .content-container > *,
+    body[data-theme="dark"] .content-container > * {
+        background-color: transparent !important;
+        background-image: none !important;
+        background: none !important;
+    }
+
     /* Стили для домашних заданий - максимальная специфичность */
     [data-theme="dark"] .ui-task, 
     html[data-theme="dark"] .ui-task,
@@ -43,9 +87,6 @@ const forceDarkModeStyles = `
     [data-theme="dark"] .lesson-container,
     html[data-theme="dark"] .lesson-container,
     body[data-theme="dark"] .lesson-container,
-    [data-theme="dark"] .content-container,
-    html[data-theme="dark"] .content-container,
-    body[data-theme="dark"] .content-container,
     [data-theme="dark"] .course-content,
     html[data-theme="dark"] .course-content,
     body[data-theme="dark"] .course-content,
